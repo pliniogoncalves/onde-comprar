@@ -1,6 +1,6 @@
-// Fronteiras para a próxima etapa. Nenhum serviço é executado na fundação.
+// Fronteiras substituíveis: a Etapa 2 usa apenas adaptadores mock locais.
 export type Product = { name: string; brand?: string; model?: string };
-export type RecognitionResult = { product: Product; needsConfirmation: boolean };
+export type RecognitionResult = { product: Product | null; needsConfirmation: boolean };
 export type Offer = {
   id: string;
   product: Product;
@@ -11,5 +11,5 @@ export type Offer = {
   capturedAt: string;
   source: 'mock';
 };
-export interface RecognitionAdapter { recognize(imageUri: string): Promise<RecognitionResult> }
-export interface OffersAdapter { search(product: Product): Promise<Offer[]> }
+export interface RecognitionAdapter { recognize(imageUri: string, signal: AbortSignal): Promise<RecognitionResult> }
+export interface OffersAdapter { search(product: Product, signal: AbortSignal): Promise<Offer[]> }

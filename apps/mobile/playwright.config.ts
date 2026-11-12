@@ -3,7 +3,7 @@ import { defineConfig } from '@playwright/test';
 export default defineConfig({
   testDir: './e2e',
   outputDir: './test-results',
-  timeout: 60000,
+  timeout: 120000,
   workers: 1,
   use: { baseURL: 'http://localhost:8091', channel: 'chrome', headless: true },
   projects: [

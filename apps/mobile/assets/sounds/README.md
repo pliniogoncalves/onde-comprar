@@ -1,7 +1,7 @@
 # Som de conclusão (reservado)
 
-`sucesso.mp3` foi fornecido pelo usuário e é preservado sem edição. Nenhum arquivo de áudio é importado ou reproduzido na Etapa 1.
+`sucesso.mp3` foi fornecido pelo usuário e é preservado sem edição. Sua reprodução foi autorizada na Etapa 2 exclusivamente para testes internos do MVP, sem distribuição comercial nesta fase.
 
-Referência aprovada: intervalo de 7,0 a 7,8 segundos do áudio selecionado (aproximadamente 0,8 segundo). Antes da integração, confirmar se o arquivo já contém o recorte ou se é o áudio completo. A política em `src/features/search/completion/` permite som e háptica apenas para conclusão bem-sucedida e com a preferência habilitada. Ambos começam desativados.
+O arquivo fornecido é reproduzido como está, sem novo recorte. A referência original era um efeito de aproximadamente 0,8 segundo. A política em `src/features/search/completion/` permite uma única tentativa de som por conclusão bem-sucedida com ofertas e preferência habilitada. Som começa desativado; háptica não é executada nesta etapa.
 
-A implementação futura deve respeitar movimento reduzido na animação, impedir reprodução duplicada ao reabrir resultados e oferecer a confirmação visual independentemente do som.
+A animação respeita movimento reduzido. O identificador de conclusão é consumido antes da tentativa de reprodução; bloqueio de autoplay, retorno à tela ou mudança de preferência não repetem o som. A confirmação visual independe da reprodução. Android/iOS usam expo-audio ~1.1.1; Web usa HTMLAudioElement com rejeição de play() tratada, pois o player web dessa versão do SDK descarta a Promise. Não há uso de microfone, áudio em segundo plano ou hardware háptico.

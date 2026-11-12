@@ -14,3 +14,5 @@ Leia `docs/PRODUCT.md`, `docs/ARCHITECTURE.md` e `docs/MVP_PLAN.md` antes de pro
 - Não criar microsserviços no MVP. Preferir monólito modular.
 - Não executar deploy, criar serviços pagos ou publicar em lojas sem autorização explícita.
 - Antes de editar, verificar estado do Git; após cada etapa, explicar arquivos alterados e como testar.
+- A partir da Etapa 2, não desenvolver na `main`: apresentar planejamento e aguardar aprovação antes de criar a branch específica ou modificar arquivos.
+- Não realizar commits, pushes ou merges sem autorização explícita. Após implementação e validação, apresentar resumo e orientar o Pull Request; merge somente após revisão e aprovação.

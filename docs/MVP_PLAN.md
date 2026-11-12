@@ -1,5 +1,19 @@
 # Plano incremental de MVP
 
+## Escopo aprovado — Etapa 2: Jornada demonstrativa
+
+A Etapa 1.1 foi aprovada no ambiente web. A Etapa 2 corrente implementa somente a jornada mobile/web com imagem local, identificação corrigível, ofertas fictícias, confirmação visual e efeito sonoro opcional (uso interno). Não inclui NestJS, IA real, marketplaces, câmera/galeria ou histórico persistente. A descrição histórica da Fase 2 abaixo é um roteiro futuro, não autorização para implementar backend nesta etapa.
+
+O som é inicialmente desativado, permitido uma vez por conclusão com ofertas e falhas de reprodução não impedem a experiência visual. Háptica permanece sem implementação. A sessão demonstrativa existe apenas em memória.
+
+Versionamento: desenvolvimento em `feature/etapa-2-jornada-demonstrativa`. Commits, pushes e merges dependem de autorização explícita. Ao concluir a implementação e validação, apresentar resumo e orientação de Pull Request para revisão. Não avançar para a Etapa 3 sem autorização.
+
+## Decisões registradas e backlog
+
+Conforme decisão de 12/11/2026, fotografia é a entrada principal e galeria é a alternativa por imagem, ambas sem login obrigatório. O histórico será local e independente de autenticação. Busca independente por texto, conta e sincronização são possibilidades futuras secundárias/opcionais. A correção textual de nome, marca e modelo já pertence à Etapa 2 e não constitui uma nova modalidade de busca.
+
+O [BACKLOG.md](BACKLOG.md) separa o escopo atual dos itens futuros. Câmera, galeria, histórico persistente, busca independente por texto, login e sincronização não serão implementados na Etapa 2. Cada etapa futura exige planejamento e autorização próprios; este registro não autoriza iniciar a Etapa 3.
+
 ## Fase 0 — Planejamento e protótipo
 - Definir telas: boas-vindas/home, câmera/galeria, processamento, confirmação do produto, resultados, detalhes/ofertas, histórico, estados vazios/erro.
 - Criar protótipo navegável com dados fictícios explicitamente rotulados.

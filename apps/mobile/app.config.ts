@@ -8,7 +8,7 @@ const config: ExpoConfig = {
   version: '0.1.0',
   orientation: 'portrait',
   userInterfaceStyle: 'light',
-  plugins: ['expo-router'],
+  plugins: ['expo-router', ['expo-audio', { microphonePermission: false, recordAudioAndroid: false }]],
   ios: { supportsTablet: true },
   android: { adaptiveIcon: { backgroundColor: '#102B25' } },
 };
