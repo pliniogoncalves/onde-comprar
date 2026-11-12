@@ -8,17 +8,17 @@ import { theme } from '../../theme';
 import { IdentificationForm } from '../recognition/IdentificationForm';
 import { OfferDetail, OfferList } from '../offers/OfferViews';
 import { useDemo } from './DemoProvider';
-import { CompletionView } from './completion/CompletionView';
 import type { Phase } from './demoSession';
 import { ProcessingTimeline } from './ProcessingTimeline';
 
-function stepFor(phase: Phase) { return phase === 'recognizing' || phase === 'searching' ? 'processing' : phase; }
+function stepFor(phase: Phase) { return ['analyzing', 'recognizing', 'searching', 'organizing'].includes(phase) ? 'processing' : phase; }
 const titles: Record<string, string> = { review: 'Revise a imagem', processing: 'Demonstração em andamento', identify: 'Este é o produto?', inconclusive: 'Não identificamos o produto', complete: 'Busca demonstrativa concluída', results: 'Ofertas demonstrativas', offer: 'Detalhe da oferta', empty: 'Nenhuma oferta encontrada', error: 'A busca teve um problema', cancelled: 'Demonstração cancelada' };
 
 export function DemoScreen() {
   const { state, session } = useDemo();
   const { step, offerId } = useLocalSearchParams<{ step: string; offerId?: string }>();
   const router = useRouter();
+  if (state.phase === 'complete') return <Redirect href="/demo-complete" />;
   const expected = stepFor(state.phase);
   if (state.phase === 'idle') return <Screen title="Recomece a demonstração"><DemoNotice /><Text style={styles.body}>A sessão é temporária. Recarregar a página encerra seus dados.</Text><ActionButton label="Ir para o início" onPress={() => router.replace('/')} /></Screen>;
   const isDetail = step === 'offer' && state.phase === 'results';
@@ -31,7 +31,7 @@ export function DemoScreen() {
       <Text style={styles.body}>Imagem de exemplo local. Nenhuma imagem será enviada ou analisada por IA.</Text>
       <ActionButton label="Iniciar identificação simulada" onPress={() => { void session.recognize(); }} />
     </> : null}
-    {['recognizing', 'searching'].includes(state.phase) ? <>
+    {['analyzing', 'recognizing', 'searching', 'organizing'].includes(state.phase) ? <>
       <ProcessingTimeline state={state} />
       <ActionButton secondary label="Cancelar demonstração" onPress={() => session.cancel()} />
     </> : null}
@@ -40,7 +40,6 @@ export function DemoScreen() {
       <IdentificationForm product={state.product} onConfirm={product => session.confirm(product)} />
       <ActionButton secondary label="Rever imagem" onPress={() => session.start(state.scenario)} />
     </> : null}
-    {state.phase === 'complete' ? <CompletionView /> : null}
     {state.phase === 'results' && !isDetail ? <>
       <Text style={styles.heading}>{state.product?.name} {state.product?.brand} {state.product?.model}</Text>
       <Text style={styles.body}>Menor preço dentro de cada grupo. Todos os valores abaixo são fictícios.</Text>

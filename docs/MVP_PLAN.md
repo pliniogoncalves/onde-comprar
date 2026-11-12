@@ -1,5 +1,13 @@
 # Plano incremental de MVP
 
+## Etapa 2.1 — experiência aprovada, integração pendente
+
+Manter a branch da Etapa 2, sem commit/push/merge automático. A demonstração distribui aproximadamente 6 segundos em análise (1,2 s), identificação (1,5 s), busca (2 s) e organização (1,3 s), com pausa para confirmação manual entre identificação e busca. Valores centralizados, operações canceláveis e nenhum atraso artificial no backend real futuro.
+
+Após ofertas válidas, uma rota fora das abas apresenta confirmação exclusiva com identidade verde escuro/menta. Um marco visual dispara no máximo uma tentativa de som, se habilitado, com player preparado antecipadamente. A permanência padrão é 1,8 s após o marco, configurável e limitada ao considerar duração de áudio; depois, resultados automáticos com Tab Bar restaurada. Áudio não bloqueia o fluxo. Respeitar movimento reduzido e manter háptica fora do escopo.
+
+A experiência visual e funcional da Etapa 2.1 foi aprovada pelo usuário. A permanência de aproximadamente 1,8 s foi validada manualmente e será mantida. Commit e push da feature autorizados; a integração na main aguarda revisão final do Pull Request. Não realizar merge nem iniciar Etapa 3 sem autorização.
+
 ## Escopo aprovado — Etapa 2: Jornada demonstrativa
 
 A Etapa 1.1 foi aprovada no ambiente web. A Etapa 2 corrente implementa somente a jornada mobile/web com imagem local, identificação corrigível, ofertas fictícias, confirmação visual e efeito sonoro opcional (uso interno). Não inclui NestJS, IA real, marketplaces, câmera/galeria ou histórico persistente. A descrição histórica da Fase 2 abaixo é um roteiro futuro, não autorização para implementar backend nesta etapa.

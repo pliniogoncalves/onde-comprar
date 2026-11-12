@@ -22,8 +22,8 @@ Estas decisões orientam o produto futuro e não ampliam a Etapa 2: ela continua
 1. Abrir aplicativo, conceder as permissões necessárias à ação escolhida e fotografar ou selecionar imagem, sem login ou cadastro obrigatório.
 2. Mostrar progresso real: analisando imagem, identificando produto, buscando ofertas, organizando resultados.
 3. Se a identificação for incerta, pedir confirmação/correção.
-4. Mostrar produto identificado e ofertas, distinguindo correspondências exatas de similares.
-5. Ao concluir, exibir confirmação curta `Encontrou!` com som/háptica opcional e acessível.
+4. Após confirmar o produto, consultar ofertas e distinguir correspondências exatas de similares.
+5. Se houver ofertas válidas, apresentar `Encontrou!` em confirmação exclusiva e depois abrir os resultados. O som é opcional; háptica continua futura.
 6. Permitir reabrir uma pesquisa no histórico e atualizar as ofertas.
 
 ## MVP
@@ -48,6 +48,7 @@ Estas decisões orientam o produto futuro e não ampliam a Etapa 2: ela continua
 - Histórico de pesquisas: nome funcional provisório `Histórico` ou `Pesquisar novamente` (não `Achei Depois`, que pertencia ao branding anterior).
 - Confirmação: `Encontrou!` com áudio opcional, nunca obrigatório.
 - Não simular progresso de processamento: estados devem refletir etapas reais.
+- Na jornada demonstrativa, tempos configuráveis pertencem exclusivamente às operações mock, explicitamente simuladas. Não aplicar esses atrasos ao processamento real futuro. A experiência da Etapa 2.1 foi aprovada pelo usuário, mantendo a confirmação de aproximadamente 1,8 s; a integração na main aguarda revisão final do Pull Request.
 
 ## Privacidade
 - Consentimento e informação clara sobre envio de imagens a terceiros de IA.

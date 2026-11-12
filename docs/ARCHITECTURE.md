@@ -2,6 +2,10 @@
 
 ## Fundação implementada e Etapa 2
 
+Na Etapa 2.1, `demoTiming.ts` concentra os tempos da simulação e da confirmação. `demoSequencer.ts` contém espera abortável exclusiva de `DemoSession`; os adaptadores de identificação/ofertas não introduzem latência artificial. A sessão diferencia análise, identificação, busca e organização, sem concluir operações antes da resposta correspondente.
+
+`demo-complete.tsx` é uma rota do Stack principal, fora das abas, com áreas seguras e sem Tab Bar. `ConfirmationController` coordena o marco visual, permanência limitada, pausa por perda de foco e avanço único. O estado da sessão decide a rota de resultados; não há dois comandos concorrentes de navegação. O áudio é preparado antes do marco e seu mecanismo de reprodução não controla a navegação. O arquivo original é preservado.
+
 O mobile utiliza React Native, Expo SDK 54, Expo Router e TypeScript. A jornada demonstrativa roda inteiramente no app: `DemoSession` controla estados e cancelamento; Context/useSyncExternalStore conectam as telas; contratos de recognition/offers permitem substituir os adaptadores mock. A sessão fica em memória, sem histórico persistente. AsyncStorage continua restrito às preferências.
 
 As rotas da jornada ficam numa pilha dentro da aba Início, preservando a Tab Bar. Contratos e mocks não dependem das telas. Matching exato exige nome, marca e modelo do exemplo; dados incompatíveis não recebem ofertas de outro produto.

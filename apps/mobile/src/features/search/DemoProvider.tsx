@@ -8,6 +8,9 @@ const Context = createContext<DemoContext | null>(null);
 export function DemoProvider({ children }: PropsWithChildren) {
   const [session] = useState(() => new DemoSession());
   const sound = useCompletionSound();
+  useEffect(() => session.subscribe(() => {
+    if (['review', 'analyzing', 'organizing'].includes(session.getSnapshot().phase)) void sound.prepare();
+  }), [session, sound]);
   const { preferences } = usePreferences();
   useEffect(() => { if (!preferences.soundEnabled) sound.stop(); }, [preferences.soundEnabled, sound]);
   return <Context.Provider value={{ session, sound }}>{children}</Context.Provider>;

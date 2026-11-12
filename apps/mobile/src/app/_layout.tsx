@@ -9,8 +9,10 @@ export default function RootLayout() {
   return <SafeAreaProvider>
     <PreferencesProvider>
       <DemoProvider>
-      <StatusBar style={pathname === '/' ? 'light' : 'dark'} />
-      <Stack screenOptions={{ headerShown: false }} />
+      <StatusBar style={pathname === '/' || pathname === '/demo-complete' ? 'light' : 'dark'} />
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="demo-complete" options={{ animation: 'none', gestureEnabled: false }} />
+      </Stack>
       </DemoProvider>
     </PreferencesProvider>
   </SafeAreaProvider>;

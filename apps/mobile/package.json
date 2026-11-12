@@ -7,6 +7,8 @@
     "node": ">=20.19.4"
   },
   "scripts": {
+    "measure:audio": "node scripts/measure-completion.cjs",
+    "record:demo": "node scripts/record-demo.cjs",
     "demo:image": "node scripts/create-demo-image.cjs",
     "inspect:layout": "node scripts/inspect-layout.cjs",
     "test:web": "playwright test",
