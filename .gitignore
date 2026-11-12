@@ -1,0 +1,60 @@
+# Dependências, caches e arquivos gerados
+node_modules/
+.expo/
+dist/
+build/
+coverage/
+.cache/
+.npm/
+.turbo/
+*.tsbuildinfo
+*.log
+apps/mobile/expo-env.d.ts
+
+# Relatórios e capturas locais de testes
+artifacts/
+test-results/
+playwright-report/
+blob-report/
+
+# Configurações locais, credenciais e variáveis de ambiente
+.env
+.env.*
+!.env.example
+.npmrc
+.aws/
+.ssh/
+.codex/
+credentials.json
+service-account*.json
+google-services.json
+GoogleService-Info.plist
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+*.mobileprovision
+
+# Dados locais e pacotes de distribuição
+*.db
+*.sqlite
+*.sqlite3
+*.db-*
+*.sqlite-*
+*.sqlite3-*
+*.apk
+*.aab
+*.ipa
+*.xcarchive/
+.gradle/
+
+# Preferências de editores e arquivos do sistema operacional
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
