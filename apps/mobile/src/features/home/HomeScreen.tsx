@@ -3,6 +3,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Screen } from '../../components/Screen';
 import { BrandHeader } from '../../components/BrandHeader';
 import { theme } from '../../theme';
+import { DemoEntry } from '../search/DemoEntry';
 
 export function HomeScreen() {
   return <Screen topContent={<BrandHeader />} safeAreaBackground={theme.colors.primary}>
@@ -12,6 +13,7 @@ export function HomeScreen() {
           <View style={styles.camera}><Ionicons name="camera-outline" size={18} color={theme.colors.primary} /></View>
         </View>
       </View>
+    <DemoEntry />
     <View style={styles.actions}>
       <Text accessibilityRole="header" style={styles.sectionTitle}>Gostou? Comece com uma foto.</Text>
       <Text style={styles.supporting}>Captura de imagens em breve.</Text>

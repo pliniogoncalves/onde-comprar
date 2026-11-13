@@ -22,7 +22,7 @@ export default function TabsLayout() {
     tabBarItemStyle: { minHeight: itemHeight },
     tabBarLabelStyle: { fontSize: 12, lineHeight: labelLineHeight, flexShrink: 0, fontWeight: '600' },
   }}>
-    <Tabs.Screen name="index" options={{ title: 'Início', tabBarAccessibilityLabel: 'Início', tabBarIcon: ({ color, size }) => <Ionicons name="home-outline" size={size} color={color} /> }} />
+    <Tabs.Screen name="(home)" options={{ title: 'Início', tabBarAccessibilityLabel: 'Início', tabBarIcon: ({ color, size }) => <Ionicons name="home-outline" size={size} color={color} /> }} />
     <Tabs.Screen name="history" options={{ title: 'Histórico', tabBarAccessibilityLabel: 'Histórico', tabBarIcon: ({ color, size }) => <Ionicons name="time-outline" size={size} color={color} /> }} />
     <Tabs.Screen name="preferences" options={{ title: 'Preferências', tabBarAccessibilityLabel: 'Preferências', tabBarIcon: ({ color, size }) => <Ionicons name="options-outline" size={size} color={color} /> }} />
   </Tabs>;
